@@ -20,7 +20,7 @@ from django.contrib.auth import SESSION_KEY, BACKEND_SESSION_KEY
 
 @user_passes_test(can_su_login)
 def login_as_user(request, user_id):
-    su_user = authenticate(su=True,pk=user_id)
+    su_user = authenticate(su=True, pk=user_id)
 
     if not su_user:
         raise Http404("User not found")
